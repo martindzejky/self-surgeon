@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 using System.Collections.Generic;
 
 public class PartHighlighter : MonoBehaviour {
-    public Stack<BodyPart> mouseOverParts = new Stack<BodyPart>();
+    public List<BodyPart> mouseOverParts = new List<BodyPart>();
+
+    public Color highlightColor;
 
     public GameObject uiTextObject;
 
@@ -11,6 +14,9 @@ public class PartHighlighter : MonoBehaviour {
     public BodyPart currentOverPart;
     [HideInInspector]
     public BodyPart previousOverPart;
+
+    [HideInInspector]
+    public BodyPart selectedBodyPart;
 
     private Camera mainCamera;
 
@@ -26,11 +32,12 @@ public class PartHighlighter : MonoBehaviour {
 
     public void Update() {
         if (this.mouseOverParts.Count > 0) {
-            this.currentOverPart = this.mouseOverParts.Peek();
+            this.currentOverPart = this.mouseOverParts.Last();
 
             if (!this.previousOverPart || this.previousOverPart != this.currentOverPart) {
                 Debug.Log("New body part under mouse " + this.currentOverPart.partName);
                 this.previousOverPart = this.currentOverPart;
+                this.currentOverPart.GetComponent<SpriteRenderer>().color = this.highlightColor;
             }
         } else {
             this.currentOverPart = null;
@@ -42,13 +49,20 @@ public class PartHighlighter : MonoBehaviour {
 
             var textComponent = this.uiTextObject.GetComponent<Text>();
             textComponent.text = this.currentOverPart.partName;
-
-            this.HandleClicking();
         } else {
             this.uiTextObject.SetActive(false);
         }
+
+        this.HandleClicking();
     }
 
     private void HandleClicking() {
+        if (Input.GetButtonDown("Primary")) {
+            if (this.currentOverPart) {
+                this.selectedBodyPart = this.currentOverPart;
+            } else {
+                this.selectedBodyPart = null;
+            }
+        }
     }
 }

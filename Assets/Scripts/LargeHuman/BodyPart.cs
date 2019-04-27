@@ -16,10 +16,13 @@ public class BodyPart : MonoBehaviour {
     }
 
     public void OnMouseEnter() {
-        PartHighlighter.main.mouseOverParts.Push(this);
+        if (!PartHighlighter.main.mouseOverParts.Contains(this)) {
+            PartHighlighter.main.mouseOverParts.Add(this);
+        }
     }
 
     public void OnMouseExit() {
-        PartHighlighter.main.mouseOverParts.Pop();
+        PartHighlighter.main.mouseOverParts.Remove(this);
+        this.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
