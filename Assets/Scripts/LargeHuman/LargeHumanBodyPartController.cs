@@ -17,7 +17,12 @@ public class LargeHumanBodyPartController : MonoBehaviour {
                 Debug.Log("Adding default body part global state for " + bodyPart.partName);
                 state = new BodyPartGlobalState() {
                     bodyPartName = bodyPart.partName,
-                    currentType = BodyPartType.Human,
+                    currentType =
+                        Random.value < .3f ?
+                            BodyPartType.Robotic :
+                            Random.value < .80f ?
+                                BodyPartType.Human :
+                                BodyPartType.Missing
                 };
 
                 GlobalGameController

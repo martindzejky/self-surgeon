@@ -4,6 +4,8 @@ public class BodyPart : MonoBehaviour {
     public string partName;
     public BodyPartType currentType;
 
+    public BodyPart requiredPart;
+
     public Sprite humanSprite;
     public Sprite roboticSprite;
 
@@ -22,6 +24,13 @@ public class BodyPart : MonoBehaviour {
             default:
                 spriteRenderer.sprite = null;
                 break;
+        }
+    }
+
+    public void Awake() {
+        if (this.requiredPart && this.requiredPart.currentType == BodyPartType.Missing) {
+            this.currentType = BodyPartType.Missing;
+            this.GetComponent<SpriteRenderer>().sprite = null;
         }
     }
 }

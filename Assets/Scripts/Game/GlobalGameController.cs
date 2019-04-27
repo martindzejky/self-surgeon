@@ -14,9 +14,28 @@ public class GlobalGameController : MonoBehaviour {
 
     public List<BodyPartGlobalState> currentPlayerBodyState; // probably should be a hash set
 
+    public HumanPartDefinition FindHumanPartDefinition(string partName) {
+        return this
+            .bodyPartDatabase
+            .FirstOrDefault(
+                part => part.bodyPartName == partName
+            );
+    }
+
+    public RoboticPartDefinition FindRoboticPartDefinition(string partName) {
+        return this
+            .roboticPartDatabase
+            .FirstOrDefault(
+                part => part.bodyPartName == partName
+            );
+    }
+
     public void OnOperateClick() {
         var currentlySelectedPart = PartHighlighter.instance.selectedBodyPart;
-        var partDefinition = this.bodyPartDatabase.First(part => part.name == currentlySelectedPart.partName);
+
+        if (currentlySelectedPart.currentType == BodyPartType.Robotic) return;
+
+        var partDefinition = this.FindHumanPartDefinition(currentlySelectedPart.partName);
 
         if (partDefinition.operationScene != null && partDefinition.operationScene != "") {
             Debug.Log("Opening operation scene " + partDefinition.operationScene);

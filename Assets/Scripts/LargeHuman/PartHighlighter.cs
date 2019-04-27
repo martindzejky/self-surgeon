@@ -57,6 +57,10 @@ public class PartHighlighter : MonoBehaviour {
 
             var textComponent = this.uiTextObject.GetComponent<Text>();
             textComponent.text = this.currentOverPart.partName;
+
+            if (this.currentOverPart.currentType == BodyPartType.Missing) {
+                textComponent.text += " (missing)";
+            }
             
             var transform = this.uiTextObject.GetComponent<RectTransform>();
             transform.position = new Vector3(
