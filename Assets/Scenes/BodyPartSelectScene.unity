@@ -437,7 +437,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1548955906}
   partName: {fileID: 1250122944}
-  previouslyEnabled: 1
+  bloodText: {fileID: 0}
+  imunityText: {fileID: 0}
 --- !u!1 &213753101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,33 +1349,43 @@ MonoBehaviour:
   - name: Head
     blood: 140
     imunity: 1800
+    operationScene: HeadOperation
   - name: Eyes
     blood: 20
     imunity: 24
+    operationScene: 
   - name: Neck
     blood: 38
     imunity: 5
+    operationScene: 
   - name: Torso
     blood: 328
     imunity: 1590
+    operationScene: 
   - name: Upper Left Arm
     blood: 52
     imunity: 230
+    operationScene: 
   - name: Lower Left Arm
     blood: 30
     imunity: 166
+    operationScene: 
   - name: Upper Right Arm
     blood: 57
     imunity: 225
+    operationScene: 
   - name: Lower Right Arm
     blood: 28
     imunity: 172
+    operationScene: 
   - name: Left Leg
     blood: 55
     imunity: 35
+    operationScene: 
   - name: Right Leg
     blood: 62
     imunity: 28
+    operationScene: 
   roboticPartDatabase: []
 --- !u!1 &855759391
 GameObject:
@@ -2519,7 +2530,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1706785270}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 806963988}
+        m_MethodName: OnOperateClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1706785270

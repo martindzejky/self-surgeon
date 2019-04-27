@@ -6,6 +6,8 @@ public struct HumanPartDefinition {
 
     public uint blood;
     public uint imunity;
+
+    public string operationScene;
 }
 
 [Serializable]
