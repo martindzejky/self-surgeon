@@ -280,6 +280,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  currentType: 0
+  humanSprite: {fileID: 21300000, guid: e63c15f14bc584ba7a975d56b4c6f5cb, type: 3}
+  roboticSprite: {fileID: 21300000, guid: 656fe65b6a8f948458e7b4d749562efa, type: 3}
 --- !u!61 &141304359
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -293,7 +296,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.050344005, y: 0.87220347}
+  m_Offset: {x: -0.101486444, y: 0.91008675}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -304,7 +307,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4754081, y: 0.46451235}
+  m_Size: {x: 0.577693, y: 0.48345405}
   m_EdgeRadius: 0
 --- !u!1 &163675661
 GameObject:
@@ -533,6 +536,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  currentType: 0
+  humanSprite: {fileID: 21300000, guid: 8eaac20c33fdc4c1fa39ab26cb440e86, type: 3}
+  roboticSprite: {fileID: 21300000, guid: ab74c5a76b83f433294ac468e0d6ec55, type: 3}
 --- !u!61 &213753105
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -653,6 +659,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  currentType: 0
+  humanSprite: {fileID: 21300000, guid: bfab4489a3a5f4d8b8adcb9343be82ec, type: 3}
+  roboticSprite: {fileID: 21300000, guid: b86484751273e46a9b377e34ddc5ce89, type: 3}
 --- !u!61 &291347797
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -808,7 +817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.64275545, g: 0.8679245, b: 0.6853757, a: 1}
+  m_Color: {r: 0.6431373, g: 0.8666667, b: 0.6862745, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1010,6 +1019,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  currentType: 0
+  humanSprite: {fileID: 21300000, guid: 0e8f4359ae99a4bfc9edfe44c413b1b8, type: 3}
+  roboticSprite: {fileID: 21300000, guid: 45438f6ca3eb746c2b09598b1dc23c69, type: 3}
 --- !u!61 &478841818
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1142,6 +1154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  currentType: 0
+  humanSprite: {fileID: 21300000, guid: 3fcb88a17335744a99dee6ffeb07af7e, type: 3}
+  roboticSprite: {fileID: 21300000, guid: 8651c51b90cd34230a733f32ee8b8cae, type: 3}
 --- !u!61 &554642520
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1263,7 +1278,7 @@ RectTransform:
   - {fileID: 354641690}
   - {fileID: 178055803}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1326,12 +1341,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806963986}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1193467437}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &806963988
 MonoBehaviour:
@@ -1347,46 +1362,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartDatabase:
   - name: Head
+    bodyPartName: 
     blood: 140
     imunity: 1800
     operationScene: HeadOperation
   - name: Eyes
+    bodyPartName: 
     blood: 20
     imunity: 24
     operationScene: 
   - name: Neck
+    bodyPartName: 
     blood: 38
     imunity: 5
     operationScene: 
   - name: Torso
+    bodyPartName: 
     blood: 328
     imunity: 1590
     operationScene: 
   - name: Upper Left Arm
+    bodyPartName: 
     blood: 52
     imunity: 230
     operationScene: 
   - name: Lower Left Arm
+    bodyPartName: 
     blood: 30
     imunity: 166
     operationScene: 
   - name: Upper Right Arm
+    bodyPartName: 
     blood: 57
     imunity: 225
     operationScene: 
   - name: Lower Right Arm
+    bodyPartName: 
     blood: 28
     imunity: 172
     operationScene: 
   - name: Left Leg
+    bodyPartName: 
     blood: 55
     imunity: 35
     operationScene: 
   - name: Right Leg
+    bodyPartName: 
     blood: 62
     imunity: 28
     operationScene: 
   roboticPartDatabase: []
+  currentPlayerBodyState: []
 --- !u!1 &855759391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,6 +1507,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  currentType: 0
+  humanSprite: {fileID: 21300000, guid: 244d75a47ff634fd8a21503a3afebe2e, type: 3}
+  roboticSprite: {fileID: 21300000, guid: 5baf0386b7c784539a1654acfda59a1c, type: 3}
 --- !u!61 &855759395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1601,6 +1630,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  currentType: 0
+  humanSprite: {fileID: 21300000, guid: 127f119c4faf846b0b90a4e9219a875c, type: 3}
+  roboticSprite: {fileID: 21300000, guid: 17d305d4d5023402f8c7e683a982f41b, type: 3}
 --- !u!61 &866602351
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1614,7 +1646,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0062304437, y: 0.095130086}
+  m_Offset: {x: -0.0062304437, y: 0.080923826}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1625,7 +1657,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9552496, y: 0.9768703}
+  m_Size: {x: 0.9552496, y: 0.9484578}
   m_EdgeRadius: 0
 --- !u!1 &927900032
 GameObject:
@@ -1768,7 +1800,7 @@ Transform:
   - {fileID: 163675662}
   - {fileID: 1803702581}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115330167
 GameObject:
@@ -1864,6 +1896,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  currentType: 0
+  humanSprite: {fileID: 21300000, guid: 336f61987d2dc4e6f8c71038b1dc389b, type: 3}
+  roboticSprite: {fileID: 21300000, guid: 020a8f631021a4bf4a5ef43cd1ee7087, type: 3}
 --- !u!61 &1115330171
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1920,9 +1955,8 @@ Transform:
   - {fileID: 519420032}
   - {fileID: 112570225}
   - {fileID: 2112069827}
-  - {fileID: 806963987}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1209744362
 GameObject:
@@ -2013,6 +2047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1246467639}
   - component: {fileID: 1246467640}
+  - component: {fileID: 1246467641}
   m_Layer: 0
   m_Name: LargeHuman
   m_TagString: Untagged
@@ -2039,7 +2074,7 @@ Transform:
   - {fileID: 794246414}
   - {fileID: 1253368600}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1246467640
 Animator:
@@ -2060,6 +2095,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1246467641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246467638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458e111fa7b5c473786a12c78116652b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1250122942
 GameObject:
   m_ObjectHideFlags: 0
@@ -2345,6 +2392,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  currentType: 0
+  humanSprite: {fileID: 21300000, guid: 67a03db7a189749ebb15ed903a47945b, type: 3}
+  roboticSprite: {fileID: 21300000, guid: 834d8e6ed968040ff8385590e140a735, type: 3}
 --- !u!61 &1365987432
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2358,7 +2408,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.36099517, y: 0.86100316}
+  m_Offset: {x: -0.31079984, y: 0.84111446}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2369,7 +2419,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3120234, y: 0.46280235}
+  m_Size: {x: 0.41241407, y: 0.18814886}
   m_EdgeRadius: 0
 --- !u!1 &1548955906
 GameObject:
@@ -2689,7 +2739,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2071202522
 GameObject:
@@ -2864,6 +2914,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  currentType: 0
+  humanSprite: {fileID: 21300000, guid: abda71d69b86f458a8ef2e56a6b23a54, type: 3}
+  roboticSprite: {fileID: 21300000, guid: 536a3a98df57849848750ed325391b00, type: 3}
 --- !u!61 &2087187435
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2933,11 +2986,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f881af8540a489abe8715af7773acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseOverParts: []
   highlightColor: {r: 0.6431373, g: 0.8666667, b: 0.6862745, a: 1}
   uiTextObject: {fileID: 354641689}
-  currentOverPart: {fileID: 0}
   previousOverPart: {fileID: 0}
+  currentOverPart: {fileID: 0}
   selectedBodyPart: {fileID: 0}
 --- !u!1001 &8183102553914785245
 PrefabInstance:

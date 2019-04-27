@@ -8,7 +8,7 @@ public class BodyPartInfoController : MonoBehaviour {
     public Text imunityText;
 
     public void Update() {
-        bool enabled = PartHighlighter.main.selectedBodyPart;
+        bool enabled = PartHighlighter.instance.selectedBodyPart;
 
         if (enabled) {
             this.panel.SetActive(true);
@@ -19,6 +19,6 @@ public class BodyPartInfoController : MonoBehaviour {
     }
 
     private void SetupPanel() {
-        this.partName.text = PartHighlighter.main.selectedBodyPart.partName;
+        this.partName.text = PartHighlighter.instance.selectedBodyPart.partName;
     }
 }

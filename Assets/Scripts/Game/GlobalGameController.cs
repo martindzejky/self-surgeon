@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,8 +12,10 @@ public class GlobalGameController : MonoBehaviour {
     public HumanPartDefinition[] bodyPartDatabase;
     public RoboticPartDefinition[] roboticPartDatabase;
 
+    public List<BodyPartGlobalState> currentPlayerBodyState; // probably should be a hash set
+
     public void OnOperateClick() {
-        var currentlySelectedPart = PartHighlighter.main.selectedBodyPart;
+        var currentlySelectedPart = PartHighlighter.instance.selectedBodyPart;
         var partDefinition = this.bodyPartDatabase.First(part => part.name == currentlySelectedPart.partName);
 
         if (partDefinition.operationScene != null && partDefinition.operationScene != "") {

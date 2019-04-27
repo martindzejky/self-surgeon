@@ -2,27 +2,26 @@
 
 public class BodyPart : MonoBehaviour {
     public string partName;
+    public BodyPartType currentType;
 
-    private BoxCollider2D boxCollider;
+    public Sprite humanSprite;
+    public Sprite roboticSprite;
 
-    public void OnEnable() {
-        this.partName = this.gameObject.name;
+    public void InitializeBasedOnCurrentType() {
+        var spriteRenderer = this.GetComponent<SpriteRenderer>();
 
-        var collider = this.GetComponent<BoxCollider2D>();
-        if (collider) {
-            this.boxCollider = collider;
-            Debug.Log("Collider found for " + this.partName);
+        switch (this.currentType) {
+            case BodyPartType.Human:
+                spriteRenderer.sprite = this.humanSprite;
+                break;
+
+            case BodyPartType.Robotic:
+                spriteRenderer.sprite = this.roboticSprite;
+                break;
+            
+            default:
+                spriteRenderer.sprite = null;
+                break;
         }
-    }
-
-    public void OnMouseEnter() {
-        if (!PartHighlighter.main.mouseOverParts.Contains(this)) {
-            PartHighlighter.main.mouseOverParts.Add(this);
-        }
-    }
-
-    public void OnMouseExit() {
-        PartHighlighter.main.mouseOverParts.Remove(this);
-        this.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
