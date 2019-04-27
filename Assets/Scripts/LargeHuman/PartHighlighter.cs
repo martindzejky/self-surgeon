@@ -15,7 +15,6 @@ public class PartHighlighter : MonoBehaviour {
     [HideInInspector]
     public BodyPart previousOverPart;
 
-    [HideInInspector]
     public BodyPart selectedBodyPart;
 
     private Camera mainCamera;
@@ -61,7 +60,7 @@ public class PartHighlighter : MonoBehaviour {
             if (this.currentOverPart) {
                 this.selectedBodyPart = this.currentOverPart;
             } else {
-                this.selectedBodyPart = null;
+                // this.selectedBodyPart = null;
             }
         }
     }
