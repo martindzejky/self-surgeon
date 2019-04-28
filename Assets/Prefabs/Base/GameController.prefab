@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d073645f4a044e8695e0092b391955b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDeathSound: {fileID: 8300000, guid: c7c564125537449728bef0fb4be7b43a, type: 3}
   bodyPartDatabase:
   - name: Human Head (with Acne)
     bodyPartName: Head
@@ -131,3 +132,6 @@ MonoBehaviour:
     currentType: 0
   currentPlayer: {fileID: 0}
   currentGoals: []
+  currentMoney: 0
+  currentBlood: 0
+  currentImunity: 0
