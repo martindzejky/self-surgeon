@@ -15,6 +15,7 @@ public class GlobalGameController : MonoBehaviour {
     public List<BodyPartGlobalState> currentPlayerBodyState; // probably should be a hash set
 
     public BodyPart currentlyOperatingBodyPart;
+    public GameObject currentPlayer;
 
     public HumanPartDefinition FindHumanPartDefinition(string partName) {
         return this
@@ -52,8 +53,18 @@ public class GlobalGameController : MonoBehaviour {
         }
     }
 
+    public void KillPlayer() {
+        if (!this.currentPlayer) return;
+
+        Debug.Log("Killing the player");
+
+        Destroy(this.currentPlayer);
+    }
+
     public void Awake() {
         if (!this.InitializeInstance()) return;
+
+        SceneManager.activeSceneChanged += this.InitializeInNewScene;
     }
 
     private bool InitializeInstance() {
@@ -65,5 +76,21 @@ public class GlobalGameController : MonoBehaviour {
 
         DontDestroyOnLoad(this.gameObject);
         return true;
+    }
+
+    private void InitializeInNewScene(Scene _, Scene newScene) {
+        if (newScene.name == "BodyPartSelectScene") {
+            this.InitializeInBodyPartSelectScene();
+        } else {
+            this.InitializeInOperationScene();
+        }
+    }
+
+    private void InitializeInBodyPartSelectScene() {
+
+    }
+
+    private void InitializeInOperationScene() {
+        this.currentPlayer = GameObject.FindWithTag("Player");
     }
 }

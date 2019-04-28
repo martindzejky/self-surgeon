@@ -1483,113 +1483,18 @@ Transform:
   m_Father: {fileID: 1246467639}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &806963986
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 806963987}
-  - component: {fileID: 806963988}
-  m_Layer: 0
-  m_Name: GameController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &806963987
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806963986}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &806963988
+--- !u!114 &806963988 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3050302533046691960, guid: 085ded5ff4f3c4caf96b9e4b453db34e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3050302533313602412}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806963986}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d073645f4a044e8695e0092b391955b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bodyPartDatabase:
-  - name: Human Head (with Acne)
-    bodyPartName: Head
-    blood: 140
-    imunity: 1800
-  - name: Human Eyes
-    bodyPartName: Eyes
-    blood: 20
-    imunity: 24
-  - name: Human Neck
-    bodyPartName: Neck
-    blood: 38
-    imunity: 5
-  - name: Human Torso (Fatty)
-    bodyPartName: Torso
-    blood: 328
-    imunity: 1590
-  - name: Human Upper Left Arm (Weak)
-    bodyPartName: Upper Left Arm
-    blood: 52
-    imunity: 230
-  - name: Human Lower Left Arm
-    bodyPartName: Lower Left Arm
-    blood: 30
-    imunity: 166
-  - name: Human Upper Right Arm (Weak)
-    bodyPartName: Upper Right Arm
-    blood: 57
-    imunity: 225
-  - name: Human Lower Right Arm
-    bodyPartName: Lower Right Arm
-    blood: 28
-    imunity: 172
-  - name: Human Left Leg (Hurts)
-    bodyPartName: Left Leg
-    blood: 55
-    imunity: 35
-  - name: Human Right Leg
-    bodyPartName: Right Leg
-    blood: 62
-    imunity: 28
-  roboticPartDatabase:
-  - name: Robotic Skull
-    bodyPartName: Head
-  - name: Robotic Eyes
-    bodyPartName: Eyes
-  - name: Robotic Neck
-    bodyPartName: Neck
-  - name: Robotic Torso (Enhanced)
-    bodyPartName: Torso
-  - name: Robotic Upper Left Arm
-    bodyPartName: Upper Left Arm
-  - name: Robotic Lower Left Arm
-    bodyPartName: Lower Left Arm
-  - name: Robotic Upper Right Arm
-    bodyPartName: Upper Right Arm
-  - name: Robotic Lower Right Arm
-    bodyPartName: Lower Right Arm
-  - name: Robotic Left Leg
-    bodyPartName: Left Leg
-  - name: Robotic Right Leg
-    bodyPartName: Right Leg
-  currentPlayerBodyState: []
-  currentlyOperatingBodyPart: {fileID: 0}
 --- !u!1 &833946591
 GameObject:
   m_ObjectHideFlags: 0
@@ -3334,6 +3239,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &3050302533313602412
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3050302533046691966, guid: 085ded5ff4f3c4caf96b9e4b453db34e,
+        type: 3}
+      propertyPath: m_Name
+      value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050302533046691967, guid: 085ded5ff4f3c4caf96b9e4b453db34e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050302533046691967, guid: 085ded5ff4f3c4caf96b9e4b453db34e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050302533046691967, guid: 085ded5ff4f3c4caf96b9e4b453db34e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050302533046691967, guid: 085ded5ff4f3c4caf96b9e4b453db34e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050302533046691967, guid: 085ded5ff4f3c4caf96b9e4b453db34e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050302533046691967, guid: 085ded5ff4f3c4caf96b9e4b453db34e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050302533046691967, guid: 085ded5ff4f3c4caf96b9e4b453db34e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050302533046691967, guid: 085ded5ff4f3c4caf96b9e4b453db34e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050302533046691967, guid: 085ded5ff4f3c4caf96b9e4b453db34e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050302533046691967, guid: 085ded5ff4f3c4caf96b9e4b453db34e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050302533046691967, guid: 085ded5ff4f3c4caf96b9e4b453db34e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 085ded5ff4f3c4caf96b9e4b453db34e, type: 3}
 --- !u!1001 &8183102553914785245
 PrefabInstance:
   m_ObjectHideFlags: 0

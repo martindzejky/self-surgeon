@@ -28,12 +28,17 @@ public class ToolManipulation : MonoBehaviour {
     }
 
     private void HandlePicking() {
+        if (!this.player) {
+            this.lifted = false;
+            return;
+        }
+
         var distanceToPlayer = (
             this.player.transform.position -
             this.transform.position
         ).magnitude;
 
-        if (distanceToPlayer < 1f && Input.GetButtonDown("Secondary")) {
+        if (distanceToPlayer < 1.3f && Input.GetButtonDown("Secondary")) {
             if (this.lifted) {
                 this.lifted = false;
                 this.player.carriedTool = null;
