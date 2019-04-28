@@ -30,6 +30,7 @@ public class BloodCell : MonoBehaviour {
     }
 
     public void Die() {
+        ParticleController.instance.SpawnKillParticles(this.transform.position);
         Destroy(this.gameObject);
     }
 
