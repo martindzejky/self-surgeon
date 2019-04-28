@@ -58,6 +58,7 @@ public class GlobalGameController : MonoBehaviour {
 
         Debug.Log("Killing the player");
 
+        ParticleController.instance.SpawnKillParticles(this.currentPlayer.transform.position, 5);
         Destroy(this.currentPlayer);
     }
 

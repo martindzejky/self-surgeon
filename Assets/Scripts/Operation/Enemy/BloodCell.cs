@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class BloodCell : MonoBehaviour {
-    private float movementSpeed = 2f;
+    public float movementSpeed = 2f;
 
     private Rigidbody2D physicsBody;
     private Animator animator;
