@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Operations/TorsoOperation.unity
     guid: c011fe09fff6b4d169d11291b9878206
+  - enabled: 1
+    path: Assets/Scenes/Operations/ArmOperation2.unity
+    guid: cfda1cb3ac1b24a6889cd59519b1a06f
+  - enabled: 1
+    path: Assets/Scenes/Operations/NeckOperation.unity
+    guid: 2fecd8f0b75d449e2acc2422b5f7a735
+  - enabled: 1
+    path: Assets/Scenes/Operations/LegOperation2.unity
+    guid: 8c62e209ec04d4498a96b027c65701a1
   m_configObjects: {}

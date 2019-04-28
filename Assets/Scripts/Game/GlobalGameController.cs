@@ -62,10 +62,13 @@ public class GlobalGameController : MonoBehaviour {
 
         switch (currentlySelectedPart.partName) {
             case "Upper Left Arm":
-            case "Lower Left Arm":
             case "Upper Right Arm":
-            case "Lower Right Arm":
                 this.MoveIntoOperationScene("ArmOperation");
+                break;
+
+            case "Lower Left Arm":
+            case "Lower Right Arm":
+                this.MoveIntoOperationScene("ArmOperation2");
                 break;
 
             case "Eyes":
@@ -73,8 +76,11 @@ public class GlobalGameController : MonoBehaviour {
                 break;
 
             case "Head":
-            case "Neck":
                 this.MoveIntoOperationScene("HeadOperation");
+                break;
+
+            case "Neck":
+                this.MoveIntoOperationScene("NeckOperation");
                 break;
 
             case "Torso":
@@ -82,10 +88,12 @@ public class GlobalGameController : MonoBehaviour {
                 break;
 
             case "Right Leg":
-            case "Left Leg":
                 this.MoveIntoOperationScene("LegOperation");
                 break;
 
+            case "Left Leg":
+                this.MoveIntoOperationScene("LegOperation2");
+                break;
 
             default:
                 Debug.LogWarning("Operation level not defined for body part " + currentlySelectedPart.partName);
