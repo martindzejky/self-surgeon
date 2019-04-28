@@ -183,13 +183,19 @@ public class GlobalGameController : MonoBehaviour {
     }
 
     private void LoadSceneAfterTime(string sceneName, float seconds) {
-        StartCoroutine(this._LoadSceneAfterTime(sceneName, 1));
+        StartCoroutine(this._LoadSceneAfterTime(sceneName, seconds));
     }
 
     private IEnumerator<WaitForSeconds> _LoadSceneAfterTime(string sceneName, float seconds) {
         Debug.Log("Load scene " + sceneName + " after " + seconds + " seconds");
 
-        yield return new WaitForSeconds(seconds);
+        yield return new WaitForSeconds(seconds - .5f);
+
+        if (CoverController.instance) {
+            CoverController.instance.FadeOut();
+        }
+
+        yield return new WaitForSeconds(.5f);
 
         this.currentGoals.Clear();
         this.currentPlayer = null;
