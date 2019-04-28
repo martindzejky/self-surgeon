@@ -41,7 +41,7 @@ public class ToolManipulation : MonoBehaviour {
             this.transform.position
         ).magnitude;
 
-        if (distanceToPlayer < 1.3f && Input.GetButtonDown("Secondary")) {
+        if (distanceToPlayer < 1.3f && (Input.GetButtonDown("Secondary") || Input.GetButtonDown("Primary"))) {
             if (this.lifted) {
                 this.lifted = false;
                 this.player.carriedTool = null;

@@ -26,6 +26,9 @@ public class GlobalGameController : MonoBehaviour {
     private GameObject bloodText;
     private GameObject imunityText;
 
+    private bool seenOperationTutorial = false;
+    private string sceneToOpenAfterTutorial = "";
+
     public HumanPartDefinition FindHumanPartDefinition(string partName) {
         return this
             .bodyPartDatabase
@@ -110,7 +113,12 @@ public class GlobalGameController : MonoBehaviour {
         Debug.Log("Remaining goals " + this.currentGoals.Count);
 
         if (this.currentGoals.Count == 0) {
-            this.MoveIntoBodyPartSelectScene();
+            if (this.sceneToOpenAfterTutorial.Length > 0) {
+                this.LoadSceneAfterTime(this.sceneToOpenAfterTutorial, 3);
+                this.sceneToOpenAfterTutorial = "";
+            } else {
+                this.MoveIntoBodyPartSelectScene();
+            }
         }
     }
 
@@ -175,11 +183,17 @@ public class GlobalGameController : MonoBehaviour {
             }
         }
 
-        this.LoadSceneAfterTime("BodyPartSelectScene", 1);
+        this.LoadSceneAfterTime("BodyPartSelectScene", 3);
     }
 
     private void MoveIntoOperationScene(string sceneName) {
-        this.LoadSceneAfterTime(sceneName, 1);
+        if (this.seenOperationTutorial) {
+            this.LoadSceneAfterTime(sceneName, 1);
+        } else {
+            this.seenOperationTutorial = true;
+            this.sceneToOpenAfterTutorial = sceneName;
+            this.LoadSceneAfterTime("OperationTutorial", 1);
+        }
     }
 
     private void LoadSceneAfterTime(string sceneName, float seconds) {
