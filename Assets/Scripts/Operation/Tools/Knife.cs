@@ -11,6 +11,8 @@ public class Knife : MonoBehaviour {
     private float previousPositionY2;
     private float previousRotation2;
 
+    private float power = 60f;
+
     public void Awake() {
         this.tool = this.GetComponent<ToolManipulation>();
     }
@@ -42,7 +44,7 @@ public class Knife : MonoBehaviour {
         if (collider.gameObject.tag == "Tile") {
             var canGetHurt = collider.GetComponent<CanGetHurtTile>();
             if (canGetHurt) {
-                canGetHurt.life -= Time.deltaTime * 30;
+                canGetHurt.life -= Time.deltaTime * this.power;
 
                 if (Random.value < .2f) {
                     ParticleController.instance.SpawnBloodParticles(particleSpawn.position);

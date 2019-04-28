@@ -54,6 +54,25 @@ public class GlobalGameController : MonoBehaviour {
                 this.MoveIntoOperationScene("ArmOperation");
                 break;
 
+            case "Eyes":
+                this.MoveIntoOperationScene("EyeOperation");
+                break;
+
+            case "Head":
+            case "Neck":
+                this.MoveIntoOperationScene("HeadOperation");
+                break;
+
+            case "Torso":
+                this.MoveIntoOperationScene("TorsoOperation");
+                break;
+
+            case "Right Leg":
+            case "Left Leg":
+                this.MoveIntoOperationScene("LegOperation");
+                break;
+
+
             default:
                 Debug.LogWarning("Operation level not defined for body part " + currentlySelectedPart.partName);
                 break;

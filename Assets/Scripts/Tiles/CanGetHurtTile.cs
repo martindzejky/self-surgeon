@@ -8,7 +8,7 @@ public class CanGetHurtTile : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     private Color goalColor = new Color(.5f, 0, 0);
 
-    public void Awake() {
+    public void Start() {
         this.spriteRenderer = this.GetComponent<SpriteRenderer>();
 
         if (this.isGoal) {
