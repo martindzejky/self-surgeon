@@ -16,6 +16,7 @@ public class GlobalGameController : MonoBehaviour {
 
     public BodyPart currentlyOperatingBodyPart;
     public GameObject currentPlayer;
+    public List<CanGetHurtTile> currentGoals = new List<CanGetHurtTile>();
 
     public HumanPartDefinition FindHumanPartDefinition(string partName) {
         return this
@@ -33,7 +34,7 @@ public class GlobalGameController : MonoBehaviour {
             );
     }
 
-    public void OnOperateClick() {
+    public void StartOperation() {
         var currentlySelectedPart = PartHighlighter.instance.selectedBodyPart;
 
         if (currentlySelectedPart.currentType == BodyPartType.Robotic) return;
@@ -62,6 +63,19 @@ public class GlobalGameController : MonoBehaviour {
         Destroy(this.currentPlayer);
     }
 
+    public void CompleteGoal(CanGetHurtTile goal) {
+        if (!goal.isGoal) return;
+
+        this.currentGoals.Remove(goal);
+
+        Debug.Log("Goal completed " + goal.gameObject.name);
+        Debug.Log("Remaining goals " + this.currentGoals.Count);
+
+        if (this.currentGoals.Count == 0) {
+            SceneManager.LoadScene("BodyPartSelectScene");
+        }
+    }
+
     public void Awake() {
         if (!this.InitializeInstance()) return;
 
@@ -88,10 +102,13 @@ public class GlobalGameController : MonoBehaviour {
     }
 
     private void InitializeInBodyPartSelectScene() {
-
+        this.currentGoals.Clear();
+        this.currentPlayer = null;
     }
 
     private void InitializeInOperationScene() {
         this.currentPlayer = GameObject.FindWithTag("Player");
+
+        Debug.Log("Registered goals " + this.currentGoals.Count);
     }
 }

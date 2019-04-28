@@ -24,5 +24,16 @@ public class Syringe : MonoBehaviour {
 
     public void OnTriggerStay2D(Collider2D collider) {
         if (!tool.lifted) return;
+
+        if (collider.gameObject.tag == "Tile") {
+            var canGetHurt = collider.GetComponent<CanGetHurtTile>();
+            if (canGetHurt) {
+                canGetHurt.life += Time.deltaTime * 10;
+
+                if (Random.value < .2f) {
+                    ParticleController.instance.SpawnBloodParticles(particleSpawn.position);
+                }
+            }
+        }
     }
 }

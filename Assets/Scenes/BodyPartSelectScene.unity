@@ -1483,18 +1483,6 @@ Transform:
   m_Father: {fileID: 1246467639}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &806963988 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3050302533046691960, guid: 085ded5ff4f3c4caf96b9e4b453db34e,
-    type: 3}
-  m_PrefabInstance: {fileID: 3050302533313602412}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d073645f4a044e8695e0092b391955b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &833946591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2677,6 +2665,7 @@ GameObject:
   - component: {fileID: 1706785271}
   - component: {fileID: 1706785270}
   - component: {fileID: 1706785269}
+  - component: {fileID: 1706785272}
   m_Layer: 5
   m_Name: OperateButton
   m_TagString: Untagged
@@ -2747,8 +2736,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 806963988}
-        m_MethodName: OnOperateClick
+      - m_Target: {fileID: 1706785272}
+        m_MethodName: StartOperation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2797,6 +2786,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1706785267}
   m_CullTransparentMesh: 0
+--- !u!114 &1706785272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706785267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc274702f2f3c41379962442e5b4af8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1803702580
 GameObject:
   m_ObjectHideFlags: 0

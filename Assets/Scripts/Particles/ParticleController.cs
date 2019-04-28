@@ -24,8 +24,8 @@ public class ParticleController : MonoBehaviour {
     }
 
     public void SpawnBloodParticles(Vector2 position, float multiplier = 1f) {
-        var staticToSpawn = 1 * multiplier + Random.Range(-2, 2);
-        var movingToSpawn = 2 * multiplier + Random.Range(-2, 2);
+        var staticToSpawn = 1 * multiplier + Random.Range(-1, 1);
+        var movingToSpawn = 2 * multiplier + Random.Range(-1, 1);
 
         if (staticToSpawn > 0)
         for (var i = 0; i < staticToSpawn; i++) {
@@ -48,14 +48,18 @@ public class ParticleController : MonoBehaviour {
     }
 
     public void SpawnKillParticles(Vector2 position, float multiplier = 1f) {
-        var staticToSpawn = 8 * multiplier + Random.Range(-2, 2);
-        var movingToSpawn = 17 * multiplier + Random.Range(-2, 2);
+        var bigToSpawn = 1 * (multiplier / 2) + Random.Range(-1, 1);
+        var staticToSpawn = 8 * multiplier + Random.Range(-1, 1);
+        var movingToSpawn = 17 * multiplier + Random.Range(-1, 1);
 
-        var bigPosDelta = Random.insideUnitCircle * .1f;
-        var bigParticle = this.MakeBloodParticle();
-        bigParticle.transform.localScale = new Vector3(Random.Range(5f, 7f), Random.Range(3f, 5f), 1);
-        bigParticle.transform.position = new Vector3(position.x + bigPosDelta.x, position.y + bigPosDelta.y, 0f);
-        bigParticle.GetComponent<SpriteRenderer>().sortingLayerName = "Floor";
+        if (bigToSpawn > 0)
+        for (var i = 0; i < bigToSpawn; i++) {
+            var bigPosDelta = Random.insideUnitCircle * .1f;
+            var bigParticle = this.MakeBloodParticle();
+            bigParticle.transform.localScale = new Vector3(Random.Range(5f, 7f), Random.Range(3f, 5f), 1);
+            bigParticle.transform.position = new Vector3(position.x + bigPosDelta.x, position.y + bigPosDelta.y, 0f);
+            bigParticle.GetComponent<SpriteRenderer>().sortingLayerName = "Floor";
+        }
 
         if (staticToSpawn > 0)
         for (var i = 0; i < staticToSpawn; i++) {
