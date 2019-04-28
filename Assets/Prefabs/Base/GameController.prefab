@@ -46,65 +46,88 @@ MonoBehaviour:
   bodyPartDatabase:
   - name: Human Head (with Acne)
     bodyPartName: Head
+    price: 1200
     blood: 140
     imunity: 1800
   - name: Human Eyes
     bodyPartName: Eyes
+    price: 420
     blood: 20
     imunity: 24
   - name: Human Neck
     bodyPartName: Neck
+    price: 189
     blood: 38
     imunity: 5
   - name: Human Torso (Fatty)
     bodyPartName: Torso
+    price: 980
     blood: 328
     imunity: 1590
   - name: Human Upper Left Arm (Weak)
     bodyPartName: Upper Left Arm
+    price: 130
     blood: 52
     imunity: 230
   - name: Human Lower Left Arm
     bodyPartName: Lower Left Arm
+    price: 99
     blood: 30
     imunity: 166
   - name: Human Upper Right Arm (Weak)
     bodyPartName: Upper Right Arm
+    price: 126
     blood: 57
     imunity: 225
   - name: Human Lower Right Arm
     bodyPartName: Lower Right Arm
+    price: 101
     blood: 28
     imunity: 172
   - name: Human Left Leg (Hurts)
     bodyPartName: Left Leg
+    price: 352
     blood: 55
     imunity: 35
   - name: Human Right Leg
     bodyPartName: Right Leg
+    price: 354
     blood: 62
     imunity: 28
   roboticPartDatabase:
   - name: Robotic Skull
     bodyPartName: Head
+    price: 1050
   - name: Robotic Eyes
     bodyPartName: Eyes
+    price: 320
   - name: Robotic Neck
     bodyPartName: Neck
+    price: 191
   - name: Robotic Torso (Enhanced)
     bodyPartName: Torso
+    price: 860
   - name: Robotic Upper Left Arm
     bodyPartName: Upper Left Arm
+    price: 96
   - name: Robotic Lower Left Arm
     bodyPartName: Lower Left Arm
+    price: 64
   - name: Robotic Upper Right Arm
     bodyPartName: Upper Right Arm
+    price: 97
   - name: Robotic Lower Right Arm
     bodyPartName: Lower Right Arm
+    price: 62
   - name: Robotic Left Leg
     bodyPartName: Left Leg
+    price: 320
   - name: Robotic Right Leg
     bodyPartName: Right Leg
+    price: 310
   currentPlayerBodyState: []
-  currentlyOperatingBodyPart: {fileID: 0}
+  currentlyOperatingBodyPart:
+    bodyPartName: 
+    currentType: 0
   currentPlayer: {fileID: 0}
+  currentGoals: []

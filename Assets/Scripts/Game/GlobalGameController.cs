@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GlobalGameController : MonoBehaviour {
@@ -18,6 +19,7 @@ public class GlobalGameController : MonoBehaviour {
     public GameObject currentPlayer;
 
     public List<CanGetHurtTile> currentGoals = new List<CanGetHurtTile>(10);
+    public float currentMoney = 0;
 
     public HumanPartDefinition FindHumanPartDefinition(string partName) {
         return this
@@ -89,8 +91,9 @@ public class GlobalGameController : MonoBehaviour {
     private bool InitializeInstance() {
         if (!GlobalGameController.globalInstance) {
             GlobalGameController.globalInstance = this;
-        } else if (GlobalGameController.globalInstance != this) {
+        } else  {
             Destroy(this.gameObject);
+            return false;
         }
 
         DontDestroyOnLoad(this.gameObject);
@@ -116,6 +119,8 @@ public class GlobalGameController : MonoBehaviour {
 
                         partState.currentType = BodyPartType.Missing;
                         this.currentPlayerBodyState.Add(partState);
+
+                        this.currentMoney += this.FindHumanPartDefinition(this.currentlyOperatingBodyPart.bodyPartName).price;
                     }
                     catch {
                         Debug.Log("Missing body part state " + this.currentlyOperatingBodyPart.bodyPartName);
@@ -133,5 +138,11 @@ public class GlobalGameController : MonoBehaviour {
 
     private void OnSceneLoad(Scene _, Scene loadedScene) {
         this.currentPlayer = GameObject.FindWithTag("Player");
+
+        var money = GameObject.FindWithTag("MoneyCounter");
+        if (money) {
+            Debug.Log("Setting money text to " + this.currentMoney);
+            money.GetComponent<Text>().text = "$" + Mathf.Round(this.currentMoney * 100) / 100f;
+        }
     }
 }
