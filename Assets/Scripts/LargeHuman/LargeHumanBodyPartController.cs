@@ -13,7 +13,7 @@ public class LargeHumanBodyPartController : MonoBehaviour {
                 .currentPlayerBodyState
                 .FirstOrDefault(s => s.bodyPartName == bodyPart.partName);
 
-            if (state.bodyPartName == null) {
+            if (state.bodyPartName == default(BodyPartGlobalState).bodyPartName) {
                 Debug.Log("Adding default body part global state for " + bodyPart.partName);
                 state = new BodyPartGlobalState() {
                     bodyPartName = bodyPart.partName,
@@ -23,7 +23,7 @@ public class LargeHumanBodyPartController : MonoBehaviour {
                 GlobalGameController
                     .globalInstance
                     .currentPlayerBodyState
-                    .Append(state);
+                    .Add(state);
             }
 
             bodyPart.currentType = state.currentType;

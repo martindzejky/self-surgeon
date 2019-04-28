@@ -12,11 +12,12 @@ public class GlobalGameController : MonoBehaviour {
     public HumanPartDefinition[] bodyPartDatabase;
     public RoboticPartDefinition[] roboticPartDatabase;
 
-    public List<BodyPartGlobalState> currentPlayerBodyState; // probably should be a hash set
+    public List<BodyPartGlobalState> currentPlayerBodyState = new List<BodyPartGlobalState>(10); // probably should be a hash set
 
-    public BodyPart currentlyOperatingBodyPart;
+    public BodyPartGlobalState currentlyOperatingBodyPart;
     public GameObject currentPlayer;
-    public List<CanGetHurtTile> currentGoals = new List<CanGetHurtTile>();
+
+    public List<CanGetHurtTile> currentGoals = new List<CanGetHurtTile>(10);
 
     public HumanPartDefinition FindHumanPartDefinition(string partName) {
         return this
@@ -39,13 +40,16 @@ public class GlobalGameController : MonoBehaviour {
 
         if (currentlySelectedPart.currentType == BodyPartType.Robotic) return;
 
-        this.currentlyOperatingBodyPart = currentlySelectedPart;
+        this.currentlyOperatingBodyPart = this
+            .currentPlayerBodyState
+            .FirstOrDefault(part => part.bodyPartName == currentlySelectedPart.partName);
+
         switch (currentlySelectedPart.partName) {
             case "Upper Left Arm":
             case "Lower Left Arm":
             case "Upper Right Arm":
             case "Lower Right Arm":
-                SceneManager.LoadScene("ArmOperation");
+                this.MoveIntoOperationScene("ArmOperation");
                 break;
 
             default:
@@ -72,14 +76,14 @@ public class GlobalGameController : MonoBehaviour {
         Debug.Log("Remaining goals " + this.currentGoals.Count);
 
         if (this.currentGoals.Count == 0) {
-            SceneManager.LoadScene("BodyPartSelectScene");
+            this.MoveIntoBodyPartSelectScene();
         }
     }
 
     public void Awake() {
         if (!this.InitializeInstance()) return;
 
-        SceneManager.activeSceneChanged += this.InitializeInNewScene;
+        SceneManager.activeSceneChanged += this.OnSceneLoad;
     }
 
     private bool InitializeInstance() {
@@ -93,22 +97,41 @@ public class GlobalGameController : MonoBehaviour {
         return true;
     }
 
-    private void InitializeInNewScene(Scene _, Scene newScene) {
-        if (newScene.name == "BodyPartSelectScene") {
-            this.InitializeInBodyPartSelectScene();
-        } else {
-            this.InitializeInOperationScene();
-        }
-    }
+    private void MoveIntoBodyPartSelectScene() {
+        var wasSuccessfull = this.currentGoals.Count == 0;
 
-    private void InitializeInBodyPartSelectScene() {
         this.currentGoals.Clear();
         this.currentPlayer = null;
+
+        if (this.currentlyOperatingBodyPart.bodyPartName != default(BodyPartGlobalState).bodyPartName) {
+            if (wasSuccessfull) {
+                if (this.currentlyOperatingBodyPart.currentType == BodyPartType.Missing) {
+                    Debug.LogError("IMPLEMENT ME");
+                } else if (this.currentlyOperatingBodyPart.currentType == BodyPartType.Human) {
+                    try {
+                        var index = this.currentPlayerBodyState.FindIndex(part => part.bodyPartName == this.currentlyOperatingBodyPart.bodyPartName);
+                        var partState = this.currentPlayerBodyState[index];
+                        
+                        this.currentPlayerBodyState.RemoveAt(index);
+
+                        partState.currentType = BodyPartType.Missing;
+                        this.currentPlayerBodyState.Add(partState);
+                    }
+                    catch {
+                        Debug.Log("Missing body part state " + this.currentlyOperatingBodyPart.bodyPartName);
+                    }
+                }
+            }
+        }
+
+        SceneManager.LoadScene("BodyPartSelectScene");
     }
 
-    private void InitializeInOperationScene() {
-        this.currentPlayer = GameObject.FindWithTag("Player");
+    private void MoveIntoOperationScene(string sceneName) {
+        SceneManager.LoadScene(sceneName);
+    }
 
-        Debug.Log("Registered goals " + this.currentGoals.Count);
+    private void OnSceneLoad(Scene _, Scene loadedScene) {
+        this.currentPlayer = GameObject.FindWithTag("Player");
     }
 }
