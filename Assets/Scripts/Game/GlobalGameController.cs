@@ -97,6 +97,8 @@ public class GlobalGameController : MonoBehaviour {
 
         ParticleController.instance.SpawnKillParticles(this.currentPlayer.transform.position, 5);
         Destroy(this.currentPlayer);
+
+        this.LoadSceneAfterTime("BodyPartSelectScene", 3);
     }
 
     public void CompleteGoal(CanGetHurtTile goal) {
@@ -173,10 +175,24 @@ public class GlobalGameController : MonoBehaviour {
             }
         }
 
-        SceneManager.LoadScene("BodyPartSelectScene");
+        this.LoadSceneAfterTime("BodyPartSelectScene", 1);
     }
 
     private void MoveIntoOperationScene(string sceneName) {
+        this.LoadSceneAfterTime(sceneName, 1);
+    }
+
+    private void LoadSceneAfterTime(string sceneName, float seconds) {
+        StartCoroutine(this._LoadSceneAfterTime(sceneName, 1));
+    }
+
+    private IEnumerator<WaitForSeconds> _LoadSceneAfterTime(string sceneName, float seconds) {
+        Debug.Log("Load scene " + sceneName + " after " + seconds + " seconds");
+
+        yield return new WaitForSeconds(seconds);
+
+        this.currentGoals.Clear();
+        this.currentPlayer = null;
         SceneManager.LoadScene(sceneName);
     }
 

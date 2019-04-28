@@ -8,6 +8,9 @@ public class PartHighlighter : MonoBehaviour {
 
     public GameObject uiTextObject;
 
+    public AudioClip hoverSound;
+    public AudioClip selectSound;
+
     public BodyPart previousOverPart;
     public BodyPart currentOverPart;
     public BodyPart selectedBodyPart;
@@ -75,6 +78,13 @@ public class PartHighlighter : MonoBehaviour {
         this.HandleClicking();
 
         if (
+            this.currentOverPart &&
+            this.currentOverPart != this.previousOverPart
+        ) {
+            AudioPlayer.Play(this.hoverSound);
+        }
+
+        if (
             this.previousOverPart &&
             this.previousOverPart != this.currentOverPart
         ) {
@@ -90,6 +100,7 @@ public class PartHighlighter : MonoBehaviour {
         if (Input.GetButtonDown("Primary")) {
             if (this.currentOverPart) {
                 this.selectedBodyPart = this.currentOverPart;
+                AudioPlayer.Play(this.selectSound);
             } else {
                 // this.selectedBodyPart = null;
             }

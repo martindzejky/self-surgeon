@@ -135,3 +135,4 @@ MonoBehaviour:
   maxLife: 560
   life: 500
   isGoal: 0
+  deathSound: {fileID: 8300000, guid: c7c564125537449728bef0fb4be7b43a, type: 3}

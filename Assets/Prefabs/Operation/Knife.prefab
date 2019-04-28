@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696e53b43a3474763a304fc196fbbfc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupSound: {fileID: 8300000, guid: f364f4ef5e40a48b3b70284a7b5b69bf, type: 3}
+  putdownSound: {fileID: 8300000, guid: fc316865b617d45e08a2b60ce7aab051, type: 3}
   lifted: 0
 --- !u!60 &2210530543377549336
 PolygonCollider2D:
@@ -152,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 094502a1c9613472aa3a260d5cf5b2ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hurtSound: {fileID: 8300000, guid: 8d44a5a23f30645199748805df9fd6ef, type: 3}
   particleSpawn: {fileID: 9124415333919588536}
 --- !u!50 &-6004544309392692819
 Rigidbody2D:

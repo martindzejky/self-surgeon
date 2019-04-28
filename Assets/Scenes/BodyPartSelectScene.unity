@@ -2898,6 +2898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc274702f2f3c41379962442e5b4af8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: 2909e1ac760e8418ea3d7812460b85b4, type: 3}
 --- !u!1 &1803702580
 GameObject:
   m_ObjectHideFlags: 0
@@ -3338,6 +3339,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 0.6431373, g: 0.8666667, b: 0.6862745, a: 1}
   uiTextObject: {fileID: 354641689}
+  hoverSound: {fileID: 8300000, guid: f520d14547da84d8dab88eb07b02e2a2, type: 3}
+  selectSound: {fileID: 8300000, guid: 3f6dcb07ca3b3439c85a2fb85e65d920, type: 3}
   previousOverPart: {fileID: 0}
   currentOverPart: {fileID: 0}
   selectedBodyPart: {fileID: 0}

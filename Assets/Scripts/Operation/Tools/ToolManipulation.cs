@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ToolManipulation : MonoBehaviour {
+    public AudioClip pickupSound;
+    public AudioClip putdownSound;
+
     public bool lifted = false;
 
     private Camera mainCamera;
@@ -43,10 +46,12 @@ public class ToolManipulation : MonoBehaviour {
                 this.lifted = false;
                 this.player.carriedTool = null;
                 Debug.Log("Tool put down " + this.gameObject.name);
+                AudioPlayer.PlayAtPositionWithPitch(this.transform.position, this.putdownSound, 1, .1f);
             } else if (!player.carriedTool) {
                 this.lifted = true;
                 this.player.carriedTool = this.gameObject;
                 Debug.Log("Tool lifted " + this.gameObject.name);
+                AudioPlayer.PlayAtPositionWithPitch(this.transform.position, this.pickupSound, 1, .1f);
             }
         }
     }

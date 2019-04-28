@@ -127,6 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696e53b43a3474763a304fc196fbbfc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupSound: {fileID: 8300000, guid: f364f4ef5e40a48b3b70284a7b5b69bf, type: 3}
+  putdownSound: {fileID: 8300000, guid: fc316865b617d45e08a2b60ce7aab051, type: 3}
   lifted: 0
 --- !u!61 &4644711175467709559
 BoxCollider2D:
