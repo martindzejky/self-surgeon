@@ -46,6 +46,10 @@ public class Knife : MonoBehaviour {
             if (canGetHurt) {
                 canGetHurt.life -= Time.deltaTime * this.power;
 
+                if (!canGetHurt.isGoal) {
+                    GlobalGameController.globalInstance.currentBlood -= Time.deltaTime * this.power / 15f;
+                }
+
                 if (Random.value < .2f) {
                     ParticleController.instance.SpawnBloodParticles(particleSpawn.position);
                 }

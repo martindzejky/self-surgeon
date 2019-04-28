@@ -6,6 +6,7 @@ public class CreateTilesFromTilemap : MonoBehaviour {
     public GameObject bone;
     public GameObject muscle;
     public GameObject skin;
+    public GameObject cellFactory;
 
     private Tilemap tilemap;
 
@@ -55,6 +56,14 @@ public class CreateTilesFromTilemap : MonoBehaviour {
 
                         case "Skin":
                             Instantiate(this.skin, new Vector3(
+                                worldTilePosition.x,
+                                worldTilePosition.y,
+                                0f
+                            ), Quaternion.identity);
+                            break;
+
+                        case "CellFactory":
+                            Instantiate(this.cellFactory, new Vector3(
                                 worldTilePosition.x,
                                 worldTilePosition.y,
                                 0f

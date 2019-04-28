@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 291c8a53ee5714f61896678694e2aa0b
+guid: 7bbda1cc0767e4611bac3187f2f114e2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5737365305739371948
-    second: TilesMini_0
+      213: -5054350962518905790
+    second: CellFactory_0
   - first:
-      213: -2349993157276894213
-    second: TilesMini_1
+      213: 4715981097185985696
+    second: CellFactory_1
   - first:
-      213: -2123842274289365903
-    second: TilesMini_2
+      213: -9198098209613660435
+    second: CellFactory_2
   - first:
-      213: 6087128444920813131
-    second: TilesMini_3
-  - first:
-      213: 636067043046888229
-    second: TilesMini_4
+      213: -902495161793419759
+    second: CellFactory_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -78,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -89,7 +86,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,7 +97,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,106 +107,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TilesMini_0
+      name: CellFactory_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c559cf7084584e3b85746672e186222
-      internalID: 5737365305739371948
+      spriteID: f7788ff9469fe43779321fd00dfedd49
+      internalID: -5054350962518905790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesMini_1
+      name: CellFactory_1
       rect:
         serializedVersion: 2
         x: 16
         y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04be5ff57b0ca449882a07a97176da67
-      internalID: -2349993157276894213
+      spriteID: 9784a0562ab0446c790b392fb601233d
+      internalID: 4715981097185985696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesMini_2
+      name: CellFactory_2
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7cc7a0a25f004094bd6b2ab89d15db8
-      internalID: -2123842274289365903
+      spriteID: 5b60ac9f098024117a025aac1c67b68d
+      internalID: -9198098209613660435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesMini_3
+      name: CellFactory_3
       rect:
         serializedVersion: 2
         x: 48
         y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd98877f5881e46c1a23bcd7a61d7667
-      internalID: 6087128444920813131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesMini_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38770dc62df0d4cdf98989c317eec8dc
-      internalID: 636067043046888229
+      spriteID: 8bc112de480014ac3b0471ee3d48a11d
+      internalID: -902495161793419759
       vertices: []
       indices: 
       edges: []
@@ -217,7 +193,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3c5a15179ae99416a9901dd357f948c3
+    spriteID: 1a9be2c61d6ab4baeac3b212c96647d5
     internalID: 0
     vertices: []
     indices: 

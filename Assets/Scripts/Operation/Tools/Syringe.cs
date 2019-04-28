@@ -4,6 +4,8 @@ public class Syringe : MonoBehaviour {
     public Transform particleSpawn;
 
     private ToolManipulation tool;
+    
+    private float power = 10f;
 
     public void Awake() {
         this.tool = this.GetComponent<ToolManipulation>();
@@ -28,7 +30,8 @@ public class Syringe : MonoBehaviour {
         if (collider.gameObject.tag == "Tile") {
             var canGetHurt = collider.GetComponent<CanGetHurtTile>();
             if (canGetHurt) {
-                canGetHurt.life += Time.deltaTime * 10;
+                canGetHurt.life += Time.deltaTime * this.power;
+                GlobalGameController.globalInstance.currentBlood += Time.deltaTime * this.power / 15f;
 
                 if (Random.value < .2f) {
                     ParticleController.instance.SpawnBloodParticles(particleSpawn.position);

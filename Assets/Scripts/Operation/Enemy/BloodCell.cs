@@ -14,7 +14,8 @@ public class BloodCell : MonoBehaviour {
         this.animator = this.GetComponent<Animator>();
         this.spriteRenderer = this.GetComponent<SpriteRenderer>();
 
-        this.player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        var playerObject = GameObject.FindWithTag("Player");
+        if (playerObject) this.player = playerObject.GetComponent<Player>();
     }
 
     public void Update() {

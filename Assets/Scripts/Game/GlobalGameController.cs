@@ -20,6 +20,11 @@ public class GlobalGameController : MonoBehaviour {
 
     public List<CanGetHurtTile> currentGoals = new List<CanGetHurtTile>(10);
     public float currentMoney = 0;
+    public float currentBlood;
+    public float currentImunity;
+
+    private GameObject bloodText;
+    private GameObject imunityText;
 
     public HumanPartDefinition FindHumanPartDefinition(string partName) {
         return this
@@ -45,6 +50,12 @@ public class GlobalGameController : MonoBehaviour {
         this.currentlyOperatingBodyPart = this
             .currentPlayerBodyState
             .FirstOrDefault(part => part.bodyPartName == currentlySelectedPart.partName);
+
+        var definition = this.FindHumanPartDefinition(currentlySelectedPart.partName);
+        if (definition.bodyPartName != default(HumanPartDefinition).bodyPartName) {
+            this.currentBlood = definition.blood;
+            this.currentImunity = definition.imunity;
+        }
 
         switch (currentlySelectedPart.partName) {
             case "Upper Left Arm":
@@ -107,6 +118,20 @@ public class GlobalGameController : MonoBehaviour {
         SceneManager.activeSceneChanged += this.OnSceneLoad;
     }
 
+    public void Update() {
+        if (this.bloodText) {
+            this.bloodText.GetComponent<Text>().text = "Remaining blood: " + Mathf.Round(this.currentBlood * 100f) / 100f;
+        }
+
+        if (this.imunityText) {
+            this.imunityText.GetComponent<Text>().text = "Imunity: " + Mathf.Round(this.currentImunity * 100f) / 100f;
+        }
+
+        if (this.currentPlayer && this.currentBlood <= 0) {
+            this.KillPlayer();
+        }
+    }
+
     private bool InitializeInstance() {
         if (!GlobalGameController.globalInstance) {
             GlobalGameController.globalInstance = this;
@@ -136,7 +161,7 @@ public class GlobalGameController : MonoBehaviour {
                         
                         this.currentPlayerBodyState.RemoveAt(index);
 
-                        partState.currentType = BodyPartType.Missing;
+                        partState.currentType = BodyPartType.Robotic;
                         this.currentPlayerBodyState.Add(partState);
 
                         this.currentMoney += this.FindHumanPartDefinition(this.currentlyOperatingBodyPart.bodyPartName).price;
@@ -157,6 +182,8 @@ public class GlobalGameController : MonoBehaviour {
 
     private void OnSceneLoad(Scene _, Scene loadedScene) {
         this.currentPlayer = GameObject.FindWithTag("Player");
+        this.bloodText = GameObject.Find("BloodText");
+        this.imunityText = GameObject.Find("ImunityText");
 
         var money = GameObject.FindWithTag("MoneyCounter");
         if (money) {
