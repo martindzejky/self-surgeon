@@ -14,6 +14,8 @@ public class GlobalGameController : MonoBehaviour {
 
     public List<BodyPartGlobalState> currentPlayerBodyState; // probably should be a hash set
 
+    public BodyPart currentlyOperatingBodyPart;
+
     public HumanPartDefinition FindHumanPartDefinition(string partName) {
         return this
             .bodyPartDatabase
@@ -35,11 +37,18 @@ public class GlobalGameController : MonoBehaviour {
 
         if (currentlySelectedPart.currentType == BodyPartType.Robotic) return;
 
-        var partDefinition = this.FindHumanPartDefinition(currentlySelectedPart.partName);
+        this.currentlyOperatingBodyPart = currentlySelectedPart;
+        switch (currentlySelectedPart.partName) {
+            case "Upper Left Arm":
+            case "Lower Left Arm":
+            case "Upper Right Arm":
+            case "Lower Right Arm":
+                SceneManager.LoadScene("ArmOperation");
+                break;
 
-        if (partDefinition.operationScene != null && partDefinition.operationScene != "") {
-            Debug.Log("Opening operation scene " + partDefinition.operationScene);
-            SceneManager.LoadScene("Scenes/Operations/" + partDefinition.operationScene);
+            default:
+                Debug.LogWarning("Operation level not defined for body part " + currentlySelectedPart.partName);
+                break;
         }
     }
 

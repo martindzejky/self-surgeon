@@ -444,6 +444,7 @@ MonoBehaviour:
   bloodText: {fileID: 462721092}
   imunityText: {fileID: 927900034}
   missingText: {fileID: 634888949}
+  operateButton: {fileID: 1706785269}
 --- !u!1 &213753101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,52 +1531,42 @@ MonoBehaviour:
     bodyPartName: Head
     blood: 140
     imunity: 1800
-    operationScene: HeadOperation
   - name: Human Eyes
     bodyPartName: Eyes
     blood: 20
     imunity: 24
-    operationScene: 
   - name: Human Neck
     bodyPartName: Neck
     blood: 38
     imunity: 5
-    operationScene: 
   - name: Human Torso (Fatty)
     bodyPartName: Torso
     blood: 328
     imunity: 1590
-    operationScene: 
   - name: Human Upper Left Arm (Weak)
     bodyPartName: Upper Left Arm
     blood: 52
     imunity: 230
-    operationScene: 
   - name: Human Lower Left Arm
     bodyPartName: Lower Left Arm
     blood: 30
     imunity: 166
-    operationScene: 
   - name: Human Upper Right Arm (Weak)
     bodyPartName: Upper Right Arm
     blood: 57
     imunity: 225
-    operationScene: 
   - name: Human Lower Right Arm
     bodyPartName: Lower Right Arm
     blood: 28
     imunity: 172
-    operationScene: 
   - name: Human Left Leg (Hurts)
     bodyPartName: Left Leg
     blood: 55
     imunity: 35
-    operationScene: 
   - name: Human Right Leg
     bodyPartName: Right Leg
     blood: 62
     imunity: 28
-    operationScene: 
   roboticPartDatabase:
   - name: Robotic Skull
     bodyPartName: Head
@@ -1598,6 +1589,7 @@ MonoBehaviour:
   - name: Robotic Right Leg
     bodyPartName: Right Leg
   currentPlayerBodyState: []
+  currentlyOperatingBodyPart: {fileID: 0}
 --- !u!1 &833946591
 GameObject:
   m_ObjectHideFlags: 0
@@ -3408,6 +3400,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8183102553674417570, guid: 71f5668e1c3664440b20dc5d04a3c0b3,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8183102553674417570, guid: 71f5668e1c3664440b20dc5d04a3c0b3,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8183102553674417570, guid: 71f5668e1c3664440b20dc5d04a3c0b3,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71f5668e1c3664440b20dc5d04a3c0b3, type: 3}

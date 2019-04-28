@@ -7,6 +7,7 @@ public class BodyPartInfoController : MonoBehaviour {
     public Text bloodText;
     public Text imunityText;
     public Text missingText;
+    public Button operateButton;
 
     public void Update() {
         bool enabled = PartHighlighter.instance.selectedBodyPart;
@@ -21,6 +22,8 @@ public class BodyPartInfoController : MonoBehaviour {
 
     private void SetupPanel() {
         var selectedPart = PartHighlighter.instance.selectedBodyPart;
+
+        this.operateButton.gameObject.SetActive(selectedPart.currentType != BodyPartType.Robotic);
 
         if (selectedPart.currentType == BodyPartType.Missing) {
             this.missingText.enabled = true;
