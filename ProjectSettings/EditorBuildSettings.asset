@@ -38,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Operations/LegOperation2.unity
     guid: 8c62e209ec04d4498a96b027c65701a1
+  - enabled: 1
+    path: Assets/Scenes/Operations/LungsOperation.unity
+    guid: d52e5e7ae08814469860c4bcc2403ba7
+  - enabled: 1
+    path: Assets/Scenes/Operations/HeartOperation.unity
+    guid: 5949365badc10459f9863b1549514577
   m_configObjects: {}

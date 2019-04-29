@@ -97,6 +97,14 @@ public class GlobalGameController : MonoBehaviour {
                 this.MoveIntoOperationScene("LegOperation2");
                 break;
 
+            case "Heart":
+                this.MoveIntoOperationScene("HeartOperation");
+                break;
+
+            case "Lungs":
+                this.MoveIntoOperationScene("LungsOperation");
+                break;
+
             default:
                 Debug.LogWarning("Operation level not defined for body part " + currentlySelectedPart.partName);
                 break;
@@ -151,6 +159,13 @@ public class GlobalGameController : MonoBehaviour {
         if (this.currentPlayer && this.currentBlood <= 0) {
             this.KillPlayer();
         }
+
+        #if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.P)) {
+            Debug.LogWarning("FOR DEBUGGING ONLY: completing all goals");
+            while (this.currentGoals.Count > 0) this.CompleteGoal(this.currentGoals.First());
+        }
+        #endif
     }
 
     private bool InitializeInstance() {

@@ -5,7 +5,7 @@ public class Syringe : MonoBehaviour {
 
     private ToolManipulation tool;
     
-    private float power = 10f;
+    private float power = 40f;
 
     public void Awake() {
         this.tool = this.GetComponent<ToolManipulation>();

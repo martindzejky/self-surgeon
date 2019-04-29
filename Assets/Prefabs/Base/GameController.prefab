@@ -65,6 +65,16 @@ MonoBehaviour:
     price: 980
     blood: 328
     imunity: 1590
+  - name: Human Heart
+    bodyPartName: Heart
+    price: 4820
+    blood: 292
+    imunity: 1830
+  - name: Human Lungs (Weak)
+    bodyPartName: Lungs
+    price: 421
+    blood: 84
+    imunity: 43
   - name: Human Upper Left Arm (Weak)
     bodyPartName: Upper Left Arm
     price: 130
@@ -108,6 +118,12 @@ MonoBehaviour:
   - name: Robotic Torso (Enhanced)
     bodyPartName: Torso
     price: 860
+  - name: Robotic Heart
+    bodyPartName: Heart
+    price: 3331
+  - name: Robotic Lungs
+    bodyPartName: Lungs
+    price: 450
   - name: Robotic Upper Left Arm
     bodyPartName: Upper Left Arm
     price: 96
