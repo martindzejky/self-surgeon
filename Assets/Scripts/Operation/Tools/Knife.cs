@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
 public class Knife : MonoBehaviour {
-    public AudioClip hurtSound;
     public Transform particleSpawn;
 
     private ToolManipulation tool;
@@ -35,8 +34,6 @@ public class Knife : MonoBehaviour {
             var bloodCell = collider.gameObject.GetComponent<BloodCell>();
             if (bloodCell) {
                 bloodCell.Die();
-
-                AudioPlayer.PlayAtPositionWithPitch(bloodCell.transform.position, this.hurtSound);
             }
         }
     }
@@ -55,7 +52,6 @@ public class Knife : MonoBehaviour {
 
                 if (Random.value < .2f) {
                     ParticleController.instance.SpawnBloodParticles(particleSpawn.position);
-                    AudioPlayer.PlayAtPositionWithPitch(canGetHurt.transform.position, this.hurtSound);
                 }
             }
         }

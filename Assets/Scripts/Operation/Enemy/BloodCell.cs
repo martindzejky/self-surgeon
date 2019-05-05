@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
 public class BloodCell : MonoBehaviour {
-    public AudioClip deathSound;
     public float movementSpeed = 2f;
 
     private Rigidbody2D physicsBody;
@@ -33,7 +32,6 @@ public class BloodCell : MonoBehaviour {
 
     public void Die() {
         ParticleController.instance.SpawnKillParticles(this.transform.position);
-        AudioPlayer.PlayAtPositionWithPitch(this.transform.position, this.deathSound);
         Destroy(this.gameObject);
     }
 

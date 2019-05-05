@@ -10,8 +10,6 @@ public class GlobalGameController : MonoBehaviour {
         private set;
     }
 
-    public AudioClip playerDeathSound;
-
     public HumanPartDefinition[] bodyPartDatabase;
     public RoboticPartDefinition[] roboticPartDatabase;
 
@@ -117,7 +115,6 @@ public class GlobalGameController : MonoBehaviour {
         Debug.Log("Killing the player");
 
         ParticleController.instance.SpawnKillParticles(this.currentPlayer.transform.position, 5);
-        AudioPlayer.PlayAtPositionWithPitch(this.currentPlayer.transform.position, this.playerDeathSound);
         Destroy(this.currentPlayer);
 
         this.LoadSceneAfterTime("BodyPartSelectScene", 3);

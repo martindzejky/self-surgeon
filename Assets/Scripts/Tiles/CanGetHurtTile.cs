@@ -5,8 +5,6 @@ public class CanGetHurtTile : MonoBehaviour {
     public float life = 100f;
     public bool isGoal = false;
 
-    public AudioClip deathSound;
-
     private SpriteRenderer spriteRenderer;
     private Color goalColor = new Color(.5f, 0, 0);
 
@@ -32,7 +30,6 @@ public class CanGetHurtTile : MonoBehaviour {
             }
 
             ParticleController.instance.SpawnKillParticles(this.transform.position, 4);
-            AudioPlayer.PlayAtPositionWithPitch(this.transform.position, this.deathSound);
             Destroy(this.gameObject);
         }
     }
