@@ -1,9 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+[Obsolete("This is the old version. Use the GlobalGameManager instead.")]
 public class GlobalGameController : MonoBehaviour {
     public static GlobalGameController globalInstance {
         get;

@@ -6,42 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/IntroductionScene.unity
-    guid: adf40432bf01e4d60a6e1c18f63059dd
+    path: Assets/Scenes/ManagerScene.unity
+    guid: 503e8511c203643edae1d88054e3b63b
   - enabled: 1
-    path: Assets/Scenes/BodyPartSelectScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/OperationTutorial.unity
-    guid: 3ca5c3cdfecb2410eabefe502a4ff5b8
-  - enabled: 1
-    path: Assets/Scenes/Operations/ArmOperation.unity
-    guid: a69cee46f43094ed9b08019cfef6388e
-  - enabled: 1
-    path: Assets/Scenes/Operations/EyeOperation.unity
-    guid: 498a8529d05804dda9546de867e025b0
-  - enabled: 1
-    path: Assets/Scenes/Operations/HeadOperation.unity
-    guid: 4a967ebf18b774bda903453cdb31fb5c
-  - enabled: 1
-    path: Assets/Scenes/Operations/LegOperation.unity
-    guid: c1b7d8c45454d46e2bdcb24c7bd6563b
-  - enabled: 1
-    path: Assets/Scenes/Operations/TorsoOperation.unity
-    guid: c011fe09fff6b4d169d11291b9878206
-  - enabled: 1
-    path: Assets/Scenes/Operations/ArmOperation2.unity
-    guid: cfda1cb3ac1b24a6889cd59519b1a06f
-  - enabled: 1
-    path: Assets/Scenes/Operations/NeckOperation.unity
-    guid: 2fecd8f0b75d449e2acc2422b5f7a735
-  - enabled: 1
-    path: Assets/Scenes/Operations/LegOperation2.unity
-    guid: 8c62e209ec04d4498a96b027c65701a1
-  - enabled: 1
-    path: Assets/Scenes/Operations/LungsOperation.unity
-    guid: d52e5e7ae08814469860c4bcc2403ba7
-  - enabled: 1
-    path: Assets/Scenes/Operations/HeartOperation.unity
-    guid: 5949365badc10459f9863b1549514577
+    path: Assets/Scenes/House/MainHouseScene.unity
+    guid: 2b5d408ecd7734101878173b79379be9
   m_configObjects: {}
