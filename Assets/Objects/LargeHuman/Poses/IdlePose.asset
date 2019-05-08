@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: IdlePose
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: Skeleton
+    localPosition: {x: 0.000000014901161, y: 0.62283593, z: 0}
+    localRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Head
+    localPosition: {x: 0.88809997, y: -0.008989394, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/LeftUpperShoulder
+    localPosition: {x: 0.884565, y: 0.34473574, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/LeftUpperShoulder/LeftUpperArm
+    localPosition: {x: 0.18000032, y: -0.0000007301569, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/LeftUpperShoulder/LeftUpperArm/LeftLowerArm
+    localPosition: {x: 0.37999964, y: -0.00000035762787, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/RightUpperShoulder
+    localPosition: {x: 0.884565, y: -0.3447357, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/RightUpperShoulder/RightUpperArm
+    localPosition: {x: 0.18000032, y: -0.0000007301569, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/RightUpperShoulder/RightUpperArm/RightLowerArm
+    localPosition: {x: 0.37999964, y: -0.00000035762787, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/LeftUpperLeg
+    localPosition: {x: 0, y: 0.38874403, z: 0}
+    localRotation: {x: -0, y: -0, z: -1, w: 0}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/LeftUpperLeg/LeftLowerLeg
+    localPosition: {x: 0.35000005, y: 0, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/RightUpperLeg
+    localPosition: {x: 0, y: -0.38874394, z: 0}
+    localRotation: {x: -0, y: -0, z: -1, w: 0}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/RightUpperLeg/RightLowerLeg
+    localPosition: {x: 0.3500001, y: 0, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
