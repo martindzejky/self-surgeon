@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 596da631481c24879adfc04097bab3d7, type: 3}
-  m_Name: HeadBodyPart
+  m_Name: HumanHead
   m_EditorClassIdentifier: 
   bodyPartType: 0
   bodyPartName: Head
