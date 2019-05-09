@@ -18,11 +18,11 @@ MonoBehaviour:
     localRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
     localScale: {x: 1, y: 1, z: 1}
   - path: Skeleton/Head
-    localPosition: {x: 0.88809997, y: -0.008989394, z: 0}
+    localPosition: {x: 0.88941616, y: 0.0146974325, z: 0}
     localRotation: {x: 0, y: 0, z: 0, w: 1}
     localScale: {x: 1, y: 1, z: 1}
   - path: Skeleton/LeftUpperShoulder
-    localPosition: {x: 0.884565, y: 0.34473574, z: 0}
+    localPosition: {x: 0.88982904, y: 0.35131556, z: 0}
     localRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
     localScale: {x: 1, y: 1, z: 1}
   - path: Skeleton/LeftUpperShoulder/LeftUpperArm
@@ -34,7 +34,7 @@ MonoBehaviour:
     localRotation: {x: 0, y: 0, z: 0, w: 1}
     localScale: {x: 1, y: 1, z: 1}
   - path: Skeleton/RightUpperShoulder
-    localPosition: {x: 0.884565, y: -0.3447357, z: 0}
+    localPosition: {x: 0.8898288, y: -0.35131532, z: 0}
     localRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
     localScale: {x: 1, y: 1, z: 1}
   - path: Skeleton/RightUpperShoulder/RightUpperArm
