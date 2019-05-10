@@ -46,18 +46,18 @@ MonoBehaviour:
     localRotation: {x: 0, y: 0, z: 0.00000021841554, w: 1}
     localScale: {x: 1, y: 1, z: 1}
   - path: Skeleton/Root/LeftUpperLeg
-    localPosition: {x: 0.46875012, y: 0.40625, z: 0}
-    localRotation: {x: 0, y: 0, z: -1, w: -0.00000020896456}
+    localPosition: {x: 0.5625001, y: 0.40625, z: 0}
+    localRotation: {x: 0, y: 0, z: -1, w: 0}
     localScale: {x: 1, y: 1, z: 1}
   - path: Skeleton/Root/LeftUpperLeg/LeftLowerLeg
-    localPosition: {x: 0.21392846, y: -0.00000014901164, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.00000020896456, w: 1}
+    localPosition: {x: 0.31250003, y: -0.000000029802322, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
     localScale: {x: 1, y: 1, z: 1}
   - path: Skeleton/Root/RightUpperLeg
-    localPosition: {x: 0.46875, y: -0.37500012, z: 0}
-    localRotation: {x: 0, y: 0, z: -0.9999793, w: -0.0064420174}
+    localPosition: {x: 0.5625, y: -0.37500012, z: 0}
+    localRotation: {x: 0, y: 0, z: -1, w: 0}
     localScale: {x: 1, y: 1, z: 1}
   - path: Skeleton/Root/RightUpperLeg/RightLowerLeg
-    localPosition: {x: 0.21122487, y: 0.00000012060627, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.0064420174, w: 0.9999793}
+    localPosition: {x: 0.31250003, y: -0.000000029802322, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
     localScale: {x: 1, y: 1, z: 1}
