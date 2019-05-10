@@ -1,30 +1,53 @@
 ﻿using UnityEngine;
 
 public class LargeHumanMovement : MonoBehaviour {
-    public float movementSpeed;
+    public float maxMovementSpeed;
+    public float maxAcceleration;
+    public float deceleration;
+
+    [HideInInspector]
+    public float currentMovementSpeed;
 
     private Animator animator;
 
     private void Awake() {
-        this.animator = this.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update() {
-        var currentInput = Input.GetAxis("Horizontal");
+        var currentInput = Input.GetAxisRaw("Horizontal");
         var absCurrentInput = Mathf.Abs(currentInput);
 
-        if (absCurrentInput > .1f) {
-            var currentPosition = this.transform.position;
-            currentPosition.x += this.movementSpeed * Time.deltaTime * currentInput;
-            this.transform.position = currentPosition;
+        if (absCurrentInput > .01f) {
+            var currentAcceleration = maxAcceleration * currentInput;
 
-            var currentScale = this.transform.localScale;
-            currentScale.x = -Mathf.Sign(currentInput);
-            this.transform.localScale = currentScale;
+            currentMovementSpeed = Mathf.Clamp(
+                currentMovementSpeed + currentAcceleration,
+                -maxMovementSpeed,
+                maxMovementSpeed
+            );
+        } else {
+            var newAbsMovementSpeed = Mathf.Abs(currentMovementSpeed) - deceleration;
+            newAbsMovementSpeed = Mathf.Max(0, newAbsMovementSpeed);
+
+            currentMovementSpeed = newAbsMovementSpeed * Mathf.Sign(currentMovementSpeed);
         }
 
-        if (this.animator) {
-            this.animator.SetFloat("movementSpeed", absCurrentInput);
+        var currentMovementPercentage = currentMovementSpeed / maxMovementSpeed;
+        var absCurrentMovementPercentage = Mathf.Abs(currentMovementPercentage);
+
+        if (absCurrentMovementPercentage > .001f) {
+            var currentPosition = transform.position;
+            currentPosition.x += currentMovementSpeed * Time.deltaTime;
+            transform.position = currentPosition;
+
+            var currentScale = transform.localScale;
+            currentScale.x = -Mathf.Sign(currentMovementSpeed);
+            transform.localScale = currentScale;
+        }
+
+        if (animator) {
+            animator.SetFloat("movementSpeed", absCurrentMovementPercentage);
         }
     }
 }
