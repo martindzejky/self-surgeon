@@ -13,51 +13,51 @@ MonoBehaviour:
   m_Name: WalkPose2
   m_EditorClassIdentifier: 
   m_PoseEntries:
-  - path: Skeleton
-    localPosition: {x: 0.000000014901161, y: 0.62283593, z: 0}
+  - path: Skeleton/Root
+    localPosition: {x: 0, y: 0, z: 0}
     localRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Skeleton/Head
-    localPosition: {x: 0.88941616, y: 0.0146974325, z: 0}
+  - path: Skeleton/Root/Pants
+    localPosition: {x: 0.44457301, y: -0.00000017881393, z: 0}
     localRotation: {x: 0, y: 0, z: 0, w: 1}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Skeleton/LeftUpperShoulder
-    localPosition: {x: 0.88982904, y: 0.3513156, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-    localScale: {x: 1, y: 1, z: 1}
-  - path: Skeleton/LeftUpperShoulder/LeftUpperArm
-    localPosition: {x: 0.18000032, y: -0.0000007301569, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.6517098, w: 0.75846845}
-    localScale: {x: 1, y: 1, z: 1}
-  - path: Skeleton/LeftUpperShoulder/LeftUpperArm/LeftLowerArm
-    localPosition: {x: 0.37999964, y: -0.00000035762787, z: 0}
+  - path: Skeleton/Root/Pants/Torso
+    localPosition: {x: 0.1875, y: 0, z: 0}
     localRotation: {x: 0, y: 0, z: 0, w: 1}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Skeleton/RightUpperShoulder
-    localPosition: {x: 0.8898288, y: -0.35131532, z: 0}
-    localRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-    localScale: {x: 1, y: 1, z: 1}
-  - path: Skeleton/RightUpperShoulder/RightUpperArm
-    localPosition: {x: 0.18000032, y: -0.0000007301569, z: 0}
-    localRotation: {x: 0, y: 0, z: -0.6583087, w: 0.752748}
-    localScale: {x: 1, y: 1, z: 1}
-  - path: Skeleton/RightUpperShoulder/RightUpperArm/RightLowerArm
-    localPosition: {x: 0.37999964, y: -0.00000035762787, z: 0}
+  - path: Skeleton/Root/Pants/Torso/HeadAndNeck
+    localPosition: {x: 0.9375007, y: 0, z: 0}
     localRotation: {x: 0, y: 0, z: 0, w: 1}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Skeleton/LeftUpperLeg
-    localPosition: {x: 0, y: 0.38874403, z: 0}
-    localRotation: {x: 0, y: 0, z: -0.9974217, w: 0.071763724}
+  - path: Skeleton/Root/Pants/Torso/LeftUpperArm
+    localPosition: {x: 0.8750007, y: 0.5312498, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.9854406, w: 0.17002033}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Skeleton/LeftUpperLeg/LeftLowerLeg
-    localPosition: {x: 0.35000005, y: 0, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.19255711, w: 0.9812858}
+  - path: Skeleton/Root/Pants/Torso/LeftUpperArm/LeftLowerArm
+    localPosition: {x: 0.40871966, y: -0.00000011967495, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.2424383, w: 0.97016686}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Skeleton/RightUpperLeg
-    localPosition: {x: 0, y: -0.38874394, z: 0}
-    localRotation: {x: 0, y: 0, z: -0.98989743, w: -0.14178586}
+  - path: Skeleton/Root/Pants/Torso/RightUpperArm
+    localPosition: {x: 0.8750007, y: -0.53125054, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.97237605, w: 0.23341992}
     localScale: {x: 1, y: 1, z: 1}
-  - path: Skeleton/RightUpperLeg/RightLowerLeg
-    localPosition: {x: 0.3500001, y: 0, z: 0}
-    localRotation: {x: 0, y: 0, z: 0.18055484, w: 0.983565}
+  - path: Skeleton/Root/Pants/Torso/RightUpperArm/RightLowerArm
+    localPosition: {x: 0.40934324, y: 0.000000119209204, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.3029271, w: 0.9530138}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Root/LeftUpperLeg
+    localPosition: {x: 0.46875012, y: 0.40625, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.9472188, w: 0.32058808}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Root/LeftUpperLeg/LeftLowerLeg
+    localPosition: {x: 0.21392846, y: -0.00000014901164, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.14863792, w: 0.98889166}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Root/RightUpperLeg
+    localPosition: {x: 0.46875, y: -0.37500012, z: 0}
+    localRotation: {x: -0, y: 0, z: -0.87941194, w: -0.47606164}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Skeleton/Root/RightUpperLeg/RightLowerLeg
+    localPosition: {x: 0.2267181, y: 0, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.57395524, w: 0.81888664}
     localScale: {x: 1, y: 1, z: 1}
