@@ -1,5 +1,43 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!61 &8016038330769647150
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7627979510236528270}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8, y: 8}
+  m_EdgeRadius: 0
+--- !u!114 &2068592180708084968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7627979510236528270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae02af3da6f284e519565e5d5f823421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8782888312154808651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,7 +48,17 @@ PrefabInstance:
     - target: {fileID: 1170672647364796357, guid: 840b353921c7948efaf437e343cb71cd,
         type: 3}
       propertyPath: m_Name
-      value: HouseVirtualCamera
+      value: HouseStaticVirtualCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170672647364796359, guid: 840b353921c7948efaf437e343cb71cd,
+        type: 3}
+      propertyPath: m_Priority
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170672647364796359, guid: 840b353921c7948efaf437e343cb71cd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1170672647364796358, guid: 840b353921c7948efaf437e343cb71cd,
         type: 3}
@@ -80,7 +128,7 @@ PrefabInstance:
     - target: {fileID: 1170672646281723445, guid: 840b353921c7948efaf437e343cb71cd,
         type: 3}
       propertyPath: m_DeadZoneWidth
-      value: 0.4
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1170672646281723445, guid: 840b353921c7948efaf437e343cb71cd,
         type: 3}
@@ -90,12 +138,19 @@ PrefabInstance:
     - target: {fileID: 1170672646281723445, guid: 840b353921c7948efaf437e343cb71cd,
         type: 3}
       propertyPath: m_SoftZoneWidth
-      value: 0.4
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1170672646281723445, guid: 840b353921c7948efaf437e343cb71cd,
         type: 3}
       propertyPath: m_SoftZoneHeight
       value: 0.01
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1170672646281723445, guid: 840b353921c7948efaf437e343cb71cd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 840b353921c7948efaf437e343cb71cd, type: 3}
+--- !u!1 &7627979510236528270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1170672647364796357, guid: 840b353921c7948efaf437e343cb71cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 8782888312154808651}
+  m_PrefabAsset: {fileID: 0}
